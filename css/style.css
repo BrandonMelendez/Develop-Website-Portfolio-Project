@@ -5,6 +5,22 @@ body, header, nav, main, footer, img, h1, ul, section, aside, figure, figcaption
     border: 0;
 }
 
+/*Style rules for images*/
+img {
+    max-width: 100%;
+    display: block;
+}
+
+#content {
+    position: relative;
+}
+
+#content img {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 /*Style rules for body*/
 * {
     margin: 0;
@@ -12,8 +28,7 @@ body, header, nav, main, footer, img, h1, ul, section, aside, figure, figcaption
 }
 html {
     height: 100%;
-    background-color: yellow;
-    overflow: hidden;
+    overflow: scroll;
 }
 body {
     height: 100%;
@@ -24,12 +39,6 @@ h2, h3 {
     text-align: center;
 }
 
-.window-banner{
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-}
 #box1 {
     box-sizing: border-box;
     width: 50%;
@@ -38,48 +47,29 @@ h2, h3 {
     border-right: 1px solid;
     background-color: #01889F;
 }
-#box2 {
-    box-sizing: border-box;
-    min-width: 50%;
-    max-width: 100%;
-    height: 0%;
-    border-bottom: 1px solid;
-}
-.window {
-    width: 100%;
-    position:relative;
-    height:50%;
 
+.scrollable {
+    overflow: scroll;
 }
-.pane {
-    width: 100%;
-    position: relative;
-    height: 100%;
-    text-align: right;
-}
-#pane1{
-    /*border-bottom:1px solid;*/
-}
-#window1 {
-    border-right:1px solid;
-    border-bottom: 1px solid;
 
-}
-#window2 {
-    border-left:1px solid;
-    border-bottom: 1px solid;
-}
 /*Style rules for header*/
 header {
-    font-size: 2.5em;
+
 }
 
 header h1 {
     text-align: center;
+    font-size: 2.5em;
+}
+
+.share-tech-regular {
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 #top {
-    height: 30%;
+    height: 40%;
     width: 100%;
     display: inline-block;
     border: 1px solid;
@@ -92,14 +82,14 @@ nav {
 
 nav ul {
     list-style-type: none;
-    margin: 0;
+    margin: 2em;
     text-align: center;
 }
 
 nav li {
     display: inline-block;
     font-size: 1.5em;
-    border: 1px solid;
+    border: 2px solid #FFFF00;
 
 }
 
@@ -110,14 +100,37 @@ nav li a {
     padding: 0.5em 2em;
     text-decoration: none;
     font-size: 20px;
+    font-weight: bold;
 }
 
-.parent {
-    display: flex;
-    flex-direction: column;
-}
+
 
 /*Style rules for main*/
+main {
+    padding: 2%;
+    overflow: auto;
+    text-align: center;
+}
+
+main p {
+    font-size: 1.25em;
+}
+
+main h2 {
+    padding: 1em;
+}
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.wrap {
+    display: inline-block;
+    border: 1px solid;
+    margin: 1em;
+    padding-bottom: 3em;
+}
 
 
 /*Style rules for footer*/
@@ -126,13 +139,42 @@ footer {
     font-size: 0.65em;
     clear: left;
     padding: 1% 0;
-    position:fixed;
+    position:relative;
     bottom:0;
     left:0;
     right:0;
-    height:30px;
+    height:45px;
 }
 
 footer a {
     text-decoration: none;
+}
+
+/* Media Query for Tablet Viewport */
+@media screen and (min-width: 550px), print {
+
+    /*Tablet viewport: show tab-desk class, hide mobile class*/
+    .tab-desk {
+        display: block
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    /*Tablet viewport: Style rule for header content */
+    span.tab-desk {
+        display: inline;
+    }
+
+    /*Tablet viewport: Style rules for nav area*/
+    nav li {
+        display: inline-block;
+        font-size: 1.5em;
+        border: 4px solid #FFFF00;
+    }
+
+    nav li a {
+        padding: 0.25em 0.5em;
+    }
 }
